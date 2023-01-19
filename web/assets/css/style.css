@@ -1,0 +1,224 @@
+.proposition-markdown * {
+	all: revert;
+	font-family: inherit;
+	margin: 0;
+}
+
+
+/* Permet d'avoir le footer toujours en bas même si la page a un contenu en hauteur trop petit */
+.everything {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+*, html {
+	scroll-behavior: smooth !important;
+}
+
+main { flex: 1; }
+
+.bg-image-urne {
+	background-image: url("../resources/urne-vote.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.img-home {
+	width: 30rem;
+}
+
+@media screen and (min-width: 1280px) {
+	.img-home {
+		width: 50rem;
+	}
+}
+
+/* Quelques classes pour des couleurs utile */
+.text-dark { color: #2E3436; }
+.text-light { color: rgba(174, 164, 255, 0.5); }
+.nav-button:hover { color: #ddd; }
+.text-main { color: #8080D7; }
+.border-main { border-color: #8080D7; }
+.border-lightPurple { border-color: #bdb6fa; }
+.bg-main { background-color: #8080D7; }
+.bg-dark { background-color: #2E3436; }
+.bg-home { background-color: #AFAFF3; }
+.bg-green { background-color: #a3e6c9; }
+.bg-purple { background-color: #bcb6f5; }
+.bg-red { background-color: #ee8579; }
+.bg-lightPurple { background-color: #f8f6ff; }
+.border-light { border-color: #f8f6ff; }
+.shadow-button { filter: drop-shadow(8px 8px 0px #B8B8F8); }
+.bg-light {	background: #d6d1ff; }
+.shadow-4xl { box-shadow: rgba(0, 0, 0, 0.37) 1px 2px 10px 1px; }
+.shadow-around { box-shadow: rgba(12, 12, 12, 0.23) 1px 1px 4px 0px;}
+
+/* Permet d'avoir un effet quand on passe la souris sur les liens dans le burger-menu*/
+.link-underline {
+	border-bottom-width: 0;
+	background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+	background-size: 0 3px;
+	padding-bottom: 2px;
+	background-position: 0 100%;
+	background-repeat: no-repeat;
+	transition: background-size .5s ease-in-out;
+}
+.link-underline-color {	background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff) }
+.link-underline:hover {
+	background-size: 100% 3px;
+	background-position: 0 100%
+}
+#nav-burger { transform: translate(-57%, 34%); }
+
+
+/* Custom les inputs */
+input {	border-radius: 5px; }
+input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="date"], input[type="datetime"], input[type="button"] {
+	padding: 10px;
+	border: solid 2px #e5e7eb;
+
+}
+
+input:focus {
+	outline: none;
+	border-color: #bdb6fa;
+}
+
+textarea {
+	padding: 10px !important;
+	border-radius: 5px;
+	border: solid 2px #bdb6fa;
+}
+
+textarea:focus {
+	outline: none;
+	border-color: #bdb6fa;
+}
+
+label { font-weight: 600; }
+
+
+/* Accordion */
+
+.accordion { background-color: #c3bbff; }
+.active { border-radius: 0.25em 0.25em 0 0!important; }
+.active > .accordion-arrow { transform: rotate(90deg); }
+
+.panel {
+	border-radius: 0px 0px 0.25em 0.25em;
+	background-color: #d7d2ff;
+}
+
+
+/* Toast */
+
+.toast {
+	border-radius: 19px;
+	padding: 8px 15px 8px 8px;
+}
+
+.toast-icon .material-symbols-outlined {
+	color: white;
+	font-size: 30px;
+	font-variation-settings:'FILL' 1,'wght' 700,'GRAD' 0,'opsz' 48
+}
+
+.toast-icon { border-radius: 20px; }
+.toast-success {
+	border: #a3e6c9 solid 1px;
+	background-color: #eaf7ee;
+}
+.toast-warning {
+	border: #eeaf79 solid 1px;
+	background-color: #fef7ea;
+}
+.toast-danger {
+	border: #ee8579 solid 1px;
+	background-color: #fcede9;
+}
+
+.toast-icon-success { background-color: #39b259; }
+.toast-icon-warning { background-color: #ee9500; }
+.toast-icon-danger { background-color: #eb4e2c; }
+
+.title {
+	display: flex;
+	flex-direction: row;
+}
+.title:before, .title:after {
+	content: "";
+	flex: 1 1;
+	border-bottom: 1px solid;
+	margin: auto;
+}
+.title:before {
+	margin-right: 10px;
+	margin-left: 10%;
+}
+.title:after {
+	margin-left: 10px;
+	margin-right: 10%;
+}
+
+.filter-field {
+	border: none !important;
+}
+
+.filter-field:focus-visible {
+	outline: none;
+}
+
+/* utilisateurs checkbox */
+.checkBox-checked {
+	border: solid 2px #39b259;
+	background-color: #7bcc5d;
+	color: white;
+}
+
+input[type=checkbox] {
+	display: none;
+}
+
+/* Pour avoir toutes les barres qui font la même taille (le cas ou la somme fait pas 100% à cause des floats) */
+.result-element-bar > div:last-child {
+	flex-grow: 1;
+}
+
+.result-element > div:first-child .user {
+	background: #0fde30;
+	color: white;
+}
+
+.disable {
+	color: white;
+	border: solid 2px #e52727;
+	background-color: #6B7280;
+}
+
+/* Grid */
+.headerProp {
+	grid-template-columns: min-content auto;
+	grid-template-rows: min-content auto;
+}
+
+
+/* animation phase */
+@keyframes anim {
+	0% { background-color: #d6d1ff; }
+	50% { background-color: #8080D7; }
+	100% { background-color: #d6d1ff; }
+}
+
+.animPhase {
+	animation: anim 2s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+.button:hover {
+	background-color: #8080D7;
+	border-color: #8080D7;
+	transition-duration: 0.08s;
+}
